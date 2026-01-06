@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صدقة جارية - الحاجة سعدية أحمد إبراهيم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #1a4d2e; /* أخضر إسلامي */
+            --secondary-color: #c5a059; /* ذهبي */
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .quran-text {
+            font-family: 'Amiri', serif;
+        }
+
+        /* الهيدر */
+        header {
+            background: linear-gradient(rgba(26, 77, 46, 0.9), rgba(26, 77, 46, 0.9)), url('https://www.transparenttextures.com/patterns/arabesque.png');
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .header-content p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            animation: bounce 2s infinite;
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* الأقسام */
+        section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background: var(--secondary-color);
+            margin: 10px auto 0;
+        }
+
+        /* القرآن */
+        .verse-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border: 1px solid #eee;
+        }
+
+        .quran-text {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 2.2;
+        }
+
+        /* مشغل الصوت */
+        audio {
+            width: 100%;
+            margin-top: 20px;
+            outline: none;
+        }
+
+        /* الأدعية */
+        .dua-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .dua-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-right: 4px solid var(--secondary-color);
+        }
+
+        .dua-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* السبحة الإلكترونية */
+        .sebha-container {
+            background: var(--primary-color);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(26, 77, 46, 0.3);
+        }
+
+        .counter-display {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 20px 0;
+            font-family: 'Amiri', serif;
+        }
+
+        .sebha-btn {
+            background: var(--secondary-color);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .sebha-btn:active {
+            transform: scale(0.95);
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Animations */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content h1 { font-size: 2.5rem; }
+            .quran-text { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content" data-aos="fade-up">
+            <p>بسم الله الرحمن الرحيم</p>
+            <br>
+            <p>صدقة جارية على روح المغفور لها بإذن الله</p>
+            <h1>الحاجة سعدية أحمد إبراهيم</h1>
+            <p>"يَا أَيَّتُهَا النَّفْسُ الْمُطْمَئِنَّةُ ارْجِعِي إِلَى رَبِّكِ رَاضِيَةً مَرْضِيَّةً"</p>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <section id="quran">
+        <h2 data-aos="fade-up">آيات عطرة</h2>
+        
+        <div class="verse-card" data-aos="fade-up">
+            <p class="quran-text">
+                "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ <br>
+                يس (1) وَالْقُرْآنِ الْحَكِيمِ (2) إِنَّكَ لَمِنَ الْمُرْسَلِينَ (3) عَلَى صِرَاطٍ مُسْتَقِيمٍ (4)"
+            </p>
+            <p>سورة يس - لراحة قلبها وقبرهـا</p>
+            <audio controls>
+                <source src="https://server7.mp3quran.net/basit/036.mp3" type="audio/mpeg">
+                متصفحك لا يدعم مشغل الصوت.
+            </audio>
+        </div>
+
+        <div class="verse-card" data-aos="fade-up">
+            <p class="quran-text">
+                "تَبَارَكَ الَّذِي بِيَدِهِ الْمُلْكُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ..."
+            </p>
+            <p>سورة الملك - المنجية من عذاب القبر</p>
+            <audio controls>
+                <source src="https://server7.mp3quran.net/basit/067.mp3" type="audio/mpeg">
+                متصفحك لا يدعم مشغل الصوت.
+            </audio>
+        </div>
+    </section>
+
+    <section id="dua">
+        <h2 data-aos="fade-up">أدعية للمتوفية</h2>
+        <div class="dua-container">
+            <div class="dua-card" data-aos="flip-right">
+                <p>"اللهم اغفر للحاجة سعدية وارحمها، وعافها واعف عنها، وأكرم نزلها، ووسع مدخلها، واغسلها بالماء والثلج والبرد."</p>
+            </div>
+            <div class="dua-card" data-aos="flip-right" data-aos-delay="100">
+                <p>"اللهم اجعل قبرها روضة من رياض الجنة، ولا تجعله حفرة من حفر النار."</p>
+            </div>
+            <div class="dua-card" data-aos="flip-right" data-aos-delay="200">
+                <p>"اللهم أبدلها داراً خيراً من دارها، وأهلاً خيراً من أهلها، وأدخلها الجنة، وأعذها من عذاب القبر ومن عذاب النار."</p>
+            </div>
+            <div class="dua-card" data-aos="flip-right" data-aos-delay="300">
+                <p>"اللهم إنها في ذمتك وحبل جوارك، فقها فتنة القبر، وعذاب النار، وأنت أهل الوفاء والحق."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sebha">
+        <h2 data-aos="fade-up">استغفر لها</h2>
+        <div class="sebha-container" data-aos="zoom-in">
+            <p style="font-size: 1.2rem;">اضغط للدعاء والتسبيح بنية الأجر لها</p>
+            <div class="counter-display" id="counter">0</div>
+            <button class="sebha-btn" onclick="incrementCounter()">سبحان الله وبحمده</button>
+            <br><br>
+            <p id="dhikr-text">سبحان الله العظيم</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>نسألكم الدعاء للحاجة سعدية أحمد إبراهيم بالرحمة والمغفرة</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">اللهم تقبل هذا العمل خالصاً لوجهك الكريم</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // تفعيل مكتبة الحركة
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // كود السبحة
+        let count = 0;
+        const dhikrList = [
+            "سبحان الله وبحمده",
+            "سبحان الله العظيم",
+            "أستغفر الله العظيم",
+            "اللهم صل وسلم على نبينا محمد",
+            "لا إله إلا الله"
+        ];
+        
+        function incrementCounter() {
+            count++;
+            document.getElementById('counter').innerText = count;
+            
+            // تغيير الذكر كل 33 ضغطة
+            if (count % 33 === 0) {
+                const randomIndex = Math.floor(Math.random() * dhikrList.length);
+                document.getElementById('dhikr-text').innerText = dhikrList[randomIndex];
+                
+                // تأثير اهتزاز بسيط
+                const btn = document.querySelector('.sebha-btn');
+                btn.style.transform = "scale(1.1)";
+                setTimeout(() => btn.style.transform = "scale(1)", 100);
+            }
+        }
+    </script>
+</body>
+</html>
